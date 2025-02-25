@@ -1,0 +1,227 @@
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.score-box {
+    background-color: white;
+    color: black;
+    border-radius: 15px;
+    width: 90%;
+    height: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.score-box .header {
+    color: black !important;
+}
+
+.score {
+    font-size: 60px;
+}
+
+.home-button {
+    width: 90%;
+    margin-top: 15%;
+    background-color: rgb(225, 0, 255) !important;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.home-button:hover {
+    color: black !important;
+}
+
+.Quiz h1 {
+    margin-bottom: 0px;
+}
+
+.Quiz {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: #2c4977; */
+
+}
+
+.for-pc {
+    display: flex;
+    flex-direction: column;
+}
+
+.Quiz .header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.progress-bar {
+    background-color: rgb(225, 0, 255) !important;
+}
+
+.nextPro {
+    background-color: rgb(247, 184, 255) !important;
+}
+
+.Quiz .questions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    width: 90%;
+    height: 100%;
+    color: white;
+}
+
+.questions h2 {
+    min-height: 200px;
+    max-height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Quiz .options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10%;
+
+}
+
+/* .Quiz .options button {
+    width: 80%;
+    height: 50px;
+    margin: 10px;
+} */
+
+.option-button {
+    display: inline-block;
+    width: 90%;
+    background-color: white;
+    color: black;
+    padding: 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.next {
+    margin-top: 10%;
+    background-color: rgb(225, 0, 255) !important;
+    color: white;
+}
+
+.next:hover {
+    color: black !important;
+}
+
+.option-button input {
+    display: none;
+    /* Hide actual radio button */
+}
+
+.option-button:hover {
+    background-color: black;
+    color: white;
+    transition: 0.5s all;
+    /* Change color when selected */
+}
+
+.option-button:has(input:checked) {
+    background-color: rgb(51, 51, 51);
+    color: white;
+    /* border: 1px solid white; */
+    transition: 0.5s all;
+    /* Change color when selected */
+}
+
+
+@media(min-width:1000px) {
+
+    .header {
+        /* display: inline-block !important; */
+        text-align: center;
+    }
+
+
+    .Quiz {
+        flex-direction: column;
+    }
+
+    .for-pc {
+        flex-direction: row;
+    }
+
+    .pc-questions {
+        width: 600px;
+    }
+
+    .Quiz .questions {
+        width: 100% !important;
+    }
+
+    .questions h2 {
+        width: 600px;
+        max-width: 100%;
+    }
+
+    .questions .completed {
+        align-items: center;
+        min-height: 100px;
+    }
+
+    .Quiz .options {
+        margin-top: 0;
+        width: 100%;
+        margin-left: 30px;
+    }
+
+    .option-button {
+        width: 300px;
+        max-width: 100%;
+    }
+
+    .next {
+        margin-top: 0%;
+    }
+
+    .score-box {
+
+        width: 50%;
+        height: 50%;
+
+    }
+
+    .home-button {
+        width: 50%;
+        margin-top: 30px;
+    }
+}
