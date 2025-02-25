@@ -25,8 +25,6 @@ const Quiz = () => {
 
     const [reload, setReload] = useState(false)
 
-    const retryCount = 1;
-
     let topics = [{ name: 'Sports', logo: sportLogo, altText: 'Sport Logo', apiCategory: 21 },
     { name: 'Geography', logo: geograpthyLogo, altText: 'Geograpthy Logo', apiCategory: 22 },
     { name: 'Random', logo: gkLogo, altText: 'Random Logo', apiCategory: 9 },]
@@ -55,8 +53,6 @@ const Quiz = () => {
                         correct_answer: decodeURIComponent(q.correct_answer),
                         incorrect_answers: q.incorrect_answers.map(ans => decodeURIComponent(ans))
                     }));
-
-                    console.log(formattedQuestions);
                     setQuestions(formattedQuestions);
 
                 } catch (e) {
@@ -78,14 +74,10 @@ const Quiz = () => {
             setCount(prevCount => prevCount + 1);
 
         }
-
-        console.log('Question no:', count)
-        console.log('Score:', score)
     }
 
     const handleChange = (option) => {
         setSelectedOption(option);
-        console.log(option)
     }
 
     const handleSubmit = () => {
