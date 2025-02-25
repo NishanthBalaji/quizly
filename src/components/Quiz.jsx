@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/Quiz.css'
-import { useNavigate } from "react-router-dom";
+import Result from './Result';
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProgressBar from 'react-bootstrap/ProgressBar';
@@ -15,7 +16,6 @@ import axios from 'axios';
 
 const Quiz = () => {
     const { category } = useParams();
-    const navigate = useNavigate();
 
     let [count, setCount] = useState(1);
     const [questions, setQuestions] = useState([]);
@@ -93,9 +93,6 @@ const Quiz = () => {
         window.location.reload();
     }
 
-    const handleHome = () => {
-        navigate('/');
-    }
 
     let isLast = count === 10
 
@@ -108,25 +105,7 @@ const Quiz = () => {
                 <h1>{topic.name}</h1>
             </header >
             {showResult ?
-                <section className='questions'>
-                    <p className='completed'>Quiz Completed!</p>
-                    <p>You Scored</p>
-                    <div className='score-box'>
-                        <header className='header'>
-                            <img src={topic.logo} alt={topic.altText} style={{ width: '40px', height: '40px' }} />
-                            <h1>{topic.name}</h1>
-                        </header >
-
-
-                        <p className='score'>{score}</p>
-                        <p >Out of 10</p>
-                    </div>
-
-
-                    <button className='home-button' onClick={handleHome}>Home</button>
-
-
-                </section>
+                <Result score={score} topic={topic} />
                 :
                 <>
                     <section className='questions'>
